@@ -1,0 +1,27 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 500">
+  <!-- Modern kitchen counter -->
+  <rect fill="#f8f6f1" width="800" height="500"/>
+  
+  <!-- Wooden surface -->
+  <rect x="50" y="100" width="700" height="350" fill="#d4a373" opacity="0.3" rx="5"/>
+  
+  <!-- Main ingredient cluster -->
+  <ellipse cx="400" cy="250" rx="200" ry="150" fill="#8b6f47" opacity="0.7"/>
+  <ellipse cx="380" cy="240" rx="180" ry="140" fill="#5c4a2f" opacity="0.8"/>
+  
+  <!-- Herb leaves accent -->
+  <path d="M 200 200 Q 180 180 200 160 Q 220 140 240 160 Q 260 180 240 200 Z" fill="#2d5a2e" opacity="0.6"/>
+  <path d="M 600 280 Q 580 260 600 240 Q 620 220 640 240 Q 660 260 640 280 Z" fill="#2d5a2e" opacity="0.6"/>
+  <path d="M 350 150 Q 340 140 350 130 Q 360 120 370 130 Q 380 140 370 150 Z" fill="#2d5a2e" opacity="0.5"/>
+  <path d="M 450 330 Q 440 320 450 310 Q 460 300 470 310 Q 480 320 470 330 Z" fill="#2d5a2e" opacity="0.5"/>
+  
+  <!-- Subtle texture dots -->
+  <circle cx="380" cy="230" r="8" fill="#1e3a20" opacity="0.3"/>
+  <circle cx="420" cy="250" r="6" fill="#1e3a20" opacity="0.3"/>
+  <circle cx="390" cy="270" r="7" fill="#1e3a20" opacity="0.3"/>
+  
+  <!-- Label area -->
+  <rect x="150" y="400" width="500" height="60" fill="#ffffff" opacity="0.9" rx="3"/>
+  <text x="400" y="430" text-anchor="middle" font-family="Georgia, serif" font-size="24" fill="#1e3a20" font-weight="bold">Flaxseeds</text>
+  <text x="400" y="450" text-anchor="middle" font-family="Georgia, serif" font-size="14" fill="#666">Fresh botanical ingredients</text>
+</svg>
