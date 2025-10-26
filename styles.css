@@ -1,0 +1,436 @@
+/* PharmaBotanica - Botanical Apothecary Styles */
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Georgia', serif;
+    line-height: 1.7;
+    color: #2d3436;
+    background-color: #fefefe;
+}
+
+/* Header */
+header {
+    background: linear-gradient(135deg, #1e3a20 0%, #2d5a2e 100%);
+    padding: 1rem 0;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+}
+
+nav {
+    max-width: 1400px;
+    margin: 0 auto;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 3rem;
+}
+
+.logo {
+    font-family: 'Georgia', serif;
+    font-size: 2rem;
+    font-weight: bold;
+    text-decoration: none;
+    color: #f0ebe3;
+    letter-spacing: 1px;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.logo-leaf {
+    font-size: 2.5rem;
+    color: #90be6d;
+}
+
+.nav-links {
+    display: flex;
+    list-style: none;
+    gap: 3rem;
+}
+
+.nav-links a {
+    color: #f0ebe3;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 1.05rem;
+    letter-spacing: 0.5px;
+}
+
+.nav-links a:hover {
+    color: #90be6d;
+}
+
+/* Container */
+.container {
+    max-width: 1400px;
+    margin: 0 auto;
+    padding: 3rem;
+}
+
+/* Breadcrumb */
+.breadcrumb {
+    margin-bottom: 2rem;
+    color: #666;
+    font-size: 0.95rem;
+}
+
+.breadcrumb a {
+    color: #5a8a3a;
+    text-decoration: none;
+}
+
+.breadcrumb a:hover {
+    text-decoration: underline;
+}
+
+/* Category Hero */
+.category-hero {
+    background: linear-gradient(135deg, #1e3a20 0%, #2d5a2e 100%);
+    color: #f0ebe3;
+    padding: 4rem 2rem;
+    text-align: center;
+}
+
+.category-hero h1 {
+    font-size: 2.8rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.category-hero p {
+    font-size: 1.3rem;
+    max-width: 800px;
+    margin: 0 auto;
+    color: #ddd;
+}
+
+/* Remedies Grid */
+.remedies-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+    gap: 2.5rem;
+    margin-top: 3rem;
+}
+
+.remedy-card {
+    background: white;
+    border-radius: 0;
+    overflow: hidden;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s;
+    cursor: pointer;
+    border: 1px solid #e8e4dc;
+}
+
+.remedy-card:hover {
+    transform: translateY(-8px);
+    box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+}
+
+.remedy-image {
+    width: 100%;
+    height: 240px;
+    background-size: cover;
+    background-position: center;
+    background-color: #f8f6f1;
+    border-bottom: 3px solid #90be6d;
+}
+
+.remedy-content {
+    padding: 2rem;
+}
+
+.remedy-content h3 {
+    color: #1e3a20;
+    font-size: 1.5rem;
+    margin-bottom: 1rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.remedy-description {
+    color: #666;
+    margin-bottom: 1.5rem;
+    line-height: 1.7;
+}
+
+.remedy-meta {
+    border-top: 1px solid #e8e4dc;
+    padding-top: 1rem;
+    margin-bottom: 1.5rem;
+}
+
+.meta-item {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 0.5rem;
+}
+
+.meta-label {
+    color: #666;
+    font-size: 0.9rem;
+}
+
+.stars {
+    color: #90be6d;
+}
+
+.remedy-btn {
+    width: 100%;
+    padding: 0.9rem;
+    background: #90be6d;
+    color: #1e3a20;
+    border: none;
+    border-radius: 0;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.3s;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    font-size: 0.9rem;
+}
+
+.remedy-btn:hover {
+    background: #5a8a3a;
+    color: #f0ebe3;
+}
+
+/* Recipe Page */
+.recipe-container {
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    gap: 3rem;
+    margin-top: 2rem;
+}
+
+.recipe-main {
+    background: white;
+    padding: 3rem;
+    border-radius: 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    border: 1px solid #e8e4dc;
+}
+
+.recipe-header h1 {
+    color: #1e3a20;
+    font-size: 2.5rem;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 1px;
+}
+
+.recipe-description {
+    color: #666;
+    font-size: 1.15rem;
+    line-height: 1.8;
+    margin-bottom: 2rem;
+    padding-bottom: 2rem;
+    border-bottom: 1px solid #e8e4dc;
+}
+
+/* Ingredient Photo */
+.ingredient-photo {
+    margin: 2rem 0;
+    text-align: center;
+}
+
+.ingredient-photo img {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    border-radius: 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+    border: 1px solid #e8e4dc;
+}
+
+.photo-caption {
+    margin-top: 1rem;
+    color: #666;
+    font-style: italic;
+    font-size: 0.9rem;
+}
+
+/* Recipe Sections */
+.recipe-section {
+    margin-bottom: 2.5rem;
+}
+
+.recipe-section h2 {
+    color: #1e3a20;
+    font-size: 1.6rem;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 2px solid #90be6d;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.ingredients-list {
+    background: #f8f6f1;
+    padding: 2rem;
+    border-radius: 0;
+    white-space: pre-line;
+    line-height: 2;
+    border-left: 3px solid #90be6d;
+}
+
+.instructions {
+    line-height: 2;
+    color: #444;
+}
+
+/* Warning Box */
+.warning {
+    background: #fff8e1;
+    border-left: 4px solid #f4a261;
+    padding: 1.5rem;
+    margin: 2rem 0;
+    border-radius: 0;
+}
+
+.warning-title {
+    color: #856404;
+    font-weight: bold;
+    margin-bottom: 0.8rem;
+    font-size: 1.1rem;
+}
+
+/* Sidebar */
+.sidebar {
+    background: white;
+    padding: 2rem;
+    border-radius: 0;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    height: fit-content;
+    position: sticky;
+    top: 120px;
+    border: 1px solid #e8e4dc;
+}
+
+.quick-info h3 {
+    color: #1e3a20;
+    margin-bottom: 1.5rem;
+    font-weight: 400;
+    letter-spacing: 0.5px;
+}
+
+.info-item {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.8rem 0;
+    border-bottom: 1px solid #e8e4dc;
+}
+
+.info-label {
+    color: #666;
+}
+
+.info-value {
+    font-weight: bold;
+    color: #1e3a20;
+}
+
+/* Video Placeholder */
+.video-placeholder {
+    background: #f8f6f1;
+    border-radius: 0;
+    padding: 3rem;
+    text-align: center;
+    color: #666;
+    margin: 2rem 0;
+    border: 1px solid #e8e4dc;
+}
+
+.video-placeholder svg {
+    width: 60px;
+    height: 60px;
+    margin-bottom: 1rem;
+    color: #90be6d;
+}
+
+/* Back Button */
+.back-btn {
+    display: inline-block;
+    padding: 0.9rem 2rem;
+    background: #90be6d;
+    color: #1e3a20;
+    text-decoration: none;
+    border-radius: 0;
+    margin-bottom: 2rem;
+    transition: all 0.3s;
+    letter-spacing: 0.5px;
+    font-weight: bold;
+}
+
+.back-btn:hover {
+    background: #5a8a3a;
+    color: #f0ebe3;
+    transform: translateX(-5px);
+}
+
+/* Footer */
+footer {
+    background: #1e3a20;
+    color: #f0ebe3;
+    text-align: center;
+    padding: 3rem 2rem;
+    margin-top: 4rem;
+}
+
+footer p {
+    margin-bottom: 1rem;
+    color: #ddd;
+}
+
+.disclaimer {
+    margin-top: 2rem;
+    padding-top: 2rem;
+    border-top: 1px solid rgba(240, 235, 227, 0.2);
+    font-size: 0.9rem;
+    color: #aaa;
+    line-height: 1.7;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+/* Responsive */
+@media (max-width: 968px) {
+    .recipe-container {
+        grid-template-columns: 1fr;
+    }
+
+    .sidebar {
+        position: relative;
+        top: 0;
+    }
+
+    .nav-links {
+        gap: 1.5rem;
+        font-size: 0.95rem;
+    }
+
+    .remedies-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .container {
+        padding: 2rem 1.5rem;
+    }
+
+    nav {
+        padding: 0 1.5rem;
+    }
+
+    .recipe-main {
+        padding: 2rem;
+    }
+}

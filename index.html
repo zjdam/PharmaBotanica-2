@@ -1,0 +1,564 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PharmaBotanica - Natural Botanical Remedies</title>
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', serif;
+            line-height: 1.7;
+            color: #2d3436;
+            background-color: #fefefe;
+        }
+
+        /* Header */
+        header {
+            background: linear-gradient(135deg, #1e3a20 0%, #2d5a2e 100%);
+            padding: 1rem 0;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav {
+            max-width: 1400px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 3rem;
+        }
+
+        .logo {
+            font-family: 'Georgia', serif;
+            font-size: 2rem;
+            font-weight: bold;
+            text-decoration: none;
+            color: #f0ebe3;
+            letter-spacing: 1px;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .logo-leaf {
+            font-size: 2.5rem;
+            color: #90be6d;
+        }
+
+        .nav-links {
+            display: flex;
+            list-style: none;
+            gap: 3rem;
+        }
+
+        .nav-links a {
+            color: #f0ebe3;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 1.05rem;
+            letter-spacing: 0.5px;
+        }
+
+        .nav-links a:hover {
+            color: #90be6d;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(30, 58, 32, 0.85), rgba(45, 90, 46, 0.85)),
+                        url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 600"><rect fill="%232d5a2e" width="1200" height="600"/></svg>');
+            background-size: cover;
+            background-position: center;
+            color: #f0ebe3;
+            padding: 8rem 2rem;
+            text-align: center;
+            position: relative;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: repeating-linear-gradient(
+                45deg,
+                transparent,
+                transparent 35px,
+                rgba(144, 190, 109, 0.03) 35px,
+                rgba(144, 190, 109, 0.03) 70px
+            );
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 1;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 3.5rem;
+            margin-bottom: 1.5rem;
+            font-weight: 400;
+            letter-spacing: 2px;
+            color: #f0ebe3;
+        }
+
+        .hero-subtitle {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-style: italic;
+            color: #90be6d;
+            font-weight: 300;
+        }
+
+        .hero p {
+            font-size: 1.2rem;
+            margin-bottom: 2.5rem;
+            line-height: 1.8;
+            color: #ddd;
+        }
+
+        .hero-benefits {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 3rem 0;
+            flex-wrap: wrap;
+        }
+
+        .benefit {
+            font-size: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+            color: #f0ebe3;
+        }
+
+        .benefit::before {
+            content: '🌿';
+            font-size: 1.3rem;
+        }
+
+        .btn {
+            display: inline-block;
+            padding: 1.2rem 3rem;
+            background: #90be6d;
+            color: #1e3a20;
+            text-decoration: none;
+            border-radius: 3px;
+            font-weight: bold;
+            letter-spacing: 1px;
+            transition: all 0.3s;
+            text-transform: uppercase;
+            font-size: 0.95rem;
+        }
+
+        .btn:hover {
+            background: #a7d080;
+            transform: translateY(-2px);
+            box-shadow: 0 4px 12px rgba(144, 190, 109, 0.4);
+        }
+
+        /* Container */
+        .container {
+            max-width: 1400px;
+            margin: 0 auto;
+            padding: 5rem 3rem;
+        }
+
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            font-size: 2.8rem;
+            color: #1e3a20;
+            margin-bottom: 1rem;
+            font-weight: 400;
+            letter-spacing: 1px;
+        }
+
+        .section-subtitle {
+            text-align: center;
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 4rem;
+            font-style: italic;
+        }
+
+        /* Categories Section */
+        .categories-section {
+            background: #f8f6f1;
+            padding: 5rem 2rem;
+        }
+
+        .categories-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(350px, 1fr));
+            gap: 2.5rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+
+        .category-card {
+            background: white;
+            border-radius: 0;
+            padding: 0;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+            transition: all 0.3s;
+            cursor: pointer;
+            overflow: hidden;
+            border: 1px solid #e8e4dc;
+        }
+
+        .category-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 8px 25px rgba(0,0,0,0.15);
+        }
+
+        .category-image {
+            width: 100%;
+            height: 220px;
+            background: linear-gradient(135deg, #90be6d 0%, #5a8a3a 100%);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 5rem;
+            border-bottom: 3px solid #90be6d;
+        }
+
+        .category-content {
+            padding: 2rem;
+        }
+
+        .category-card h3 {
+            color: #1e3a20;
+            font-size: 1.6rem;
+            margin-bottom: 1rem;
+            font-weight: 400;
+            letter-spacing: 0.5px;
+        }
+
+        .category-card p {
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.7;
+        }
+
+        .recipe-count {
+            color: #90be6d;
+            font-weight: bold;
+            font-size: 0.95rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* How It Works */
+        .how-it-works {
+            background: white;
+            padding: 4rem 3rem;
+            border-radius: 0;
+            border-top: 1px solid #e8e4dc;
+            border-bottom: 1px solid #e8e4dc;
+        }
+
+        .steps {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 3rem;
+            margin-top: 3rem;
+        }
+
+        .step {
+            text-align: center;
+            padding: 2rem;
+        }
+
+        .step-number {
+            width: 70px;
+            height: 70px;
+            background: linear-gradient(135deg, #90be6d 0%, #5a8a3a 100%);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.8rem;
+            font-weight: bold;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 4px 10px rgba(144, 190, 109, 0.3);
+        }
+
+        .step h3 {
+            color: #1e3a20;
+            margin-bottom: 1rem;
+            font-size: 1.3rem;
+            font-weight: 400;
+        }
+
+        .step p {
+            color: #666;
+            line-height: 1.7;
+        }
+
+        /* Featured Quote */
+        .featured-quote {
+            background: linear-gradient(135deg, #1e3a20 0%, #2d5a2e 100%);
+            padding: 5rem 2rem;
+            text-align: center;
+            color: #f0ebe3;
+        }
+
+        .featured-quote blockquote {
+            font-size: 1.8rem;
+            font-style: italic;
+            max-width: 900px;
+            margin: 0 auto 2rem;
+            line-height: 1.8;
+            color: #90be6d;
+        }
+
+        .featured-quote cite {
+            font-size: 1.1rem;
+            color: #ddd;
+            font-style: normal;
+        }
+
+        /* Footer */
+        footer {
+            background: #1e3a20;
+            color: #f0ebe3;
+            text-align: center;
+            padding: 3rem 2rem;
+        }
+
+        footer p {
+            margin-bottom: 1rem;
+            color: #ddd;
+        }
+
+        .footer-links {
+            display: flex;
+            justify-content: center;
+            gap: 3rem;
+            margin: 2rem 0;
+        }
+
+        .footer-links a {
+            color: #90be6d;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+
+        .footer-links a:hover {
+            color: #a7d080;
+        }
+
+        .disclaimer {
+            margin-top: 2rem;
+            padding-top: 2rem;
+            border-top: 1px solid rgba(240, 235, 227, 0.2);
+            font-size: 0.9rem;
+            color: #aaa;
+            line-height: 1.6;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2.5rem;
+            }
+
+            .hero-subtitle {
+                font-size: 1.2rem;
+            }
+
+            .nav-links {
+                gap: 1.5rem;
+                font-size: 0.95rem;
+            }
+
+            .categories-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            nav {
+                padding: 0 1.5rem;
+            }
+
+            .container {
+                padding: 3rem 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <nav>
+            <a href="index.html" class="logo">
+                <span class="logo-leaf">🌿</span>
+                <span>PharmaBotanica</span>
+            </a>
+            <ul class="nav-links">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="categories.html">Remedies</a></li>
+                <li><a href="about.html">About</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>PharmaBotanica</h1>
+            <p class="hero-subtitle">Natural Botanical Remedies from Your Kitchen</p>
+            <p>Discover the ancient wisdom of herbal medicine combined with modern understanding. Create powerful, natural remedies using simple botanical ingredients.</p>
+            
+            <div class="hero-benefits">
+                <div class="benefit">Botanical Excellence</div>
+                <div class="benefit">Time-Tested Formulations</div>
+                <div class="benefit">Kitchen Apothecary</div>
+            </div>
+            
+            <div style="margin-top: 3rem;">
+                <a href="cardiovascular.html" class="btn">Explore Remedies</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Categories Section -->
+    <section class="categories-section">
+        <div class="container">
+            <h2 class="section-title">Botanical Collections</h2>
+            <p class="section-subtitle">Explore remedies organized by body system</p>
+            
+            <div class="categories-grid">
+                <div class="category-card" onclick="window.location.href='cardiovascular.html'">
+                    <div class="category-image">❤️</div>
+                    <div class="category-content">
+                        <h3>Cardiovascular System</h3>
+                        <p>Support heart health, blood pressure, and circulation with time-honored botanical remedies</p>
+                        <span class="recipe-count">14 Botanical Formulations</span>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-image">🫁</div>
+                    <div class="category-content">
+                        <h3>Respiratory System</h3>
+                        <p>Natural botanical support for breathing and lung health</p>
+                        <span class="recipe-count">Coming Soon</span>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-image">🛡️</div>
+                    <div class="category-content">
+                        <h3>Immune System</h3>
+                        <p>Strengthen your body's natural defenses with botanical immunity</p>
+                        <span class="recipe-count">Coming Soon</span>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-image">🌱</div>
+                    <div class="category-content">
+                        <h3>Digestive System</h3>
+                        <p>Gentle herbal remedies for optimal digestive wellness</p>
+                        <span class="recipe-count">Coming Soon</span>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-image">🧠</div>
+                    <div class="category-content">
+                        <h3>Nervous System</h3>
+                        <p>Botanical support for calm, clarity, and mental wellbeing</p>
+                        <span class="recipe-count">Coming Soon</span>
+                    </div>
+                </div>
+
+                <div class="category-card">
+                    <div class="category-image">💪</div>
+                    <div class="category-content">
+                        <h3>Musculoskeletal</h3>
+                        <p>Natural remedies for joints, muscles, and bone health</p>
+                        <span class="recipe-count">Coming Soon</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works -->
+    <div class="container">
+        <div class="how-it-works">
+            <h2 class="section-title">The PharmaBotanica Method</h2>
+            <p class="section-subtitle">Your journey to botanical wellness</p>
+            
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Select Your System</h3>
+                    <p>Choose the body system you wish to support</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Choose Your Remedy</h3>
+                    <p>Browse our curated botanical formulations</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Learn & Prepare</h3>
+                    <p>Follow detailed instructions and video guidance</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h3>Experience Wellness</h3>
+                    <p>Create your remedy with simple, natural ingredients</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Featured Quote -->
+    <section class="featured-quote">
+        <blockquote>
+            "Let food be thy medicine and medicine be thy food"
+        </blockquote>
+        <cite>— Hippocrates</cite>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2025 PharmaBotanica. All rights reserved.</p>
+        
+        <div class="footer-links">
+            <a href="about.html">About</a>
+            <a href="#">Privacy Policy</a>
+            <a href="#">Terms of Service</a>
+            <a href="#">Contact</a>
+        </div>
+
+        <div class="disclaimer">
+            <strong>Medical Disclaimer:</strong> The information provided on PharmaBotanica is for educational purposes only and is not intended as medical advice. These are traditional botanical remedies and should not replace professional medical care. Always consult with a qualified healthcare professional before starting any new health regimen, especially if you have existing health conditions, are pregnant or breastfeeding, or are taking medications.
+        </div>
+    </footer>
+</body>
+</html>
